@@ -107,6 +107,9 @@
     <preference name="ANDROID_SCHEME" default=" " />
     <preference name="ANDROID_HOST" default=" " />
     <preference name="ANDROID_PATHPREFIX" default="/" />
+    <preference name="UL_HOST" default=" " />
+    <preference name="UL_PREFIX_1" default=" " />
+    <preference name="UL_PREFIX_2" default=" " />
 
     <js-module src="www/android/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
@@ -179,6 +182,13 @@
       </intent-filter>
       <intent-filter>
         <data android:scheme="$NINTH_URL_SCHEME"/>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+      </intent-filter>
+      <intent-filter android:autoVerify="true">
+        <data android:host="$UL_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_1" android:scheme="https" />
+        <data android:host="$UL_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_2" android:scheme="https" />
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
