@@ -108,6 +108,8 @@
     <preference name="ANDROID_HOST" default=" " />
     <preference name="ANDROID_PATHPREFIX" default="/" />
     <preference name="UL_HOST" default=" " />
+    <preference name="UL_TEST_HOST" default=" " />
+    <preference name="UL_STAGING_HOST" default=" " />
     <preference name="UL_PREFIX_1" default=" " />
     <preference name="UL_PREFIX_2" default=" " />
 
@@ -189,6 +191,10 @@
       <intent-filter android:autoVerify="true">
         <data android:host="$UL_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_1" android:scheme="https" />
         <data android:host="$UL_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_2" android:scheme="https" />
+        <data android:host="$UL_TEST_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_1" android:scheme="https" />
+        <data android:host="$UL_TEST_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_2" android:scheme="https" />
+        <data android:host="$UL_STAGING_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_1" android:scheme="https" />
+        <data android:host="$UL_STAGING_HOST" android:pathPattern="*" android:pathPrefix="$UL_PREFIX_2" android:scheme="https" />
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
